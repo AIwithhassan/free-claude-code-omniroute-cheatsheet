@@ -1,0 +1,94 @@
+{
+  "schema_version": "2.1",
+  "total_citations": 11,
+  "citations": [
+    {
+      "index": 1,
+      "id": "swe_bench_official",
+      "url": "https://www.swebench.com/",
+      "title": "SWE-bench Official Benchmark & Leaderboard",
+      "quality": "primary",
+      "aliases": []
+    },
+    {
+      "index": 2,
+      "id": "qwen_coder_report",
+      "url": "https://qwenlm.github.io/blog/qwen2.5-coder/",
+      "title": "Qwen2.5-Coder: Code More, Learn Better Technical Release",
+      "quality": "primary",
+      "aliases": []
+    },
+    {
+      "index": 3,
+      "id": "hn_local_coding_threads",
+      "url": "https://news.ycombinator.com/item?id=41850123",
+      "title": "Hacker News Discussions: Local Coding LLMs, Qwen 2.5 Coder, and Replacing Cursor/Claude",
+      "quality": "primary",
+      "aliases": []
+    },
+    {
+      "index": 4,
+      "id": "so_developer_insights",
+      "url": "https://survey.stackoverflow.co/2024/ai/",
+      "title": "Stack Overflow Developer Survey & AI Sentiment Analysis",
+      "quality": "primary",
+      "aliases": []
+    },
+    {
+      "index": 5,
+      "id": "hf_qwen_hub",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct",
+      "title": "Hugging Face Model Hub: Qwen2.5-Coder-32B-Instruct",
+      "quality": "primary",
+      "aliases": []
+    },
+    {
+      "index": 6,
+      "id": "aider_leaderboard",
+      "url": "https://aider.chat/docs/leaderboards/",
+      "title": "Aider LLM Coding Leaderboard & Polyglot Benchmark",
+      "quality": "primary",
+      "aliases": []
+    },
+    {
+      "index": 7,
+      "id": "livecodebench_leaderboard",
+      "url": "https://livecodebench.github.io/leaderboard.html",
+      "title": "LiveCodeBench: A Holistic and Contamination-Free Evaluation Benchmark for LLMs for Code",
+      "quality": "primary",
+      "aliases": []
+    },
+    {
+      "index": 8,
+      "id": "github_cline",
+      "url": "https://github.com/cline/cline",
+      "title": "Cline: Autonomous Coding Agent in the Terminal & IDE",
+      "quality": "primary",
+      "aliases": []
+    },
+    {
+      "index": 9,
+      "id": "github_openhands",
+      "url": "https://github.com/All-Hands-AI/OpenHands",
+      "title": "OpenHands: An Open Platform for AI Software Developers",
+      "quality": "primary",
+      "aliases": []
+    },
+    {
+      "index": 10,
+      "id": "vllm_docs",
+      "url": "https://docs.vllm.ai/",
+      "title": "vLLM: High-Throughput and Memory-Efficient Inference Engine for LLMs",
+      "quality": "primary",
+      "aliases": []
+    },
+    {
+      "index": 11,
+      "id": "qwen_coder_specs",
+      "url": "https://github.com/QwenLM/Qwen2.5-Coder",
+      "title": "Qwen2.5-Coder Official Repository & Hardware Specifications",
+      "quality": "primary",
+      "aliases": []
+    }
+  ]
+}

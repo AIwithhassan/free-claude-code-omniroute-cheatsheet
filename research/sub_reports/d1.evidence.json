@@ -1,0 +1,186 @@
+{
+  "mode": "initial",
+  "dimension_id": "d1",
+  "headline": "Open-weight models (DeepSeek-R1, Qwen2.5-Coder-32B) have narrowed the raw coding benchmark gap on SWE-bench and LiveCodeBench, but proprietary frontier agents (Claude 3.5/3.7 Sonnet) maintain a decisive lead in multi-turn agentic execution and complex repository repair.",
+  "key_findings": [
+    {
+      "finding": "On SWE-bench Verified, Claude 3.5 Sonnet leads at 49.0%–53.7%, while DeepSeek-R1 reaches ~49.2% and Qwen2.5-Coder-32B achieves 35.2%–40.0%, demonstrating that open-weight models have reached frontier parity in single-turn reasoning but still lag in unassisted autonomous agent loops.",
+      "claim_ids": ["d1.c1", "d1.c2", "d1.c3"]
+    },
+    {
+      "finding": "On out-of-distribution evaluation suites like LiveCodeBench, Qwen2.5-Coder-32B and DeepSeek-V3 reach ~37.6%–40.5% Pass@1, competitive with GPT-4o but behind Claude 3.5 Sonnet (41.4%–51.1%).",
+      "claim_ids": ["d1.c4", "d1.c5"]
+    },
+    {
+      "finding": "On the Aider Polyglot Benchmark, Claude 3.5 Sonnet remains the top-performing model for multi-file editing stability, with Qwen2.5-Coder-32B-Instruct establishing itself as the leading open-weight alternative.",
+      "claim_ids": ["d1.c6", "d1.c7"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "d1.c1",
+      "text": "Claude 3.5 Sonnet achieves 49.0% to 53.7% resolution rate on SWE-bench Verified across standard and specialized agentic scaffoldings.",
+      "kind": "factual",
+      "polarity": "neutral",
+      "topic_tag": "swe_bench_claude_score",
+      "answers_key_question": "kq1",
+      "evidence": [
+        {
+          "source_id": "swe_bench_official",
+          "snippet": "Claude 3.5 Sonnet scored 49.0% with basic scaffolding and 53.7% with specialized agentic harnesses on SWE-bench Verified.",
+          "quote_type": "numeric"
+        }
+      ]
+    },
+    {
+      "id": "d1.c2",
+      "text": "DeepSeek-R1 achieves approximately 49.2% resolution rate on SWE-bench Verified, matching proprietary frontier reasoning performance.",
+      "kind": "factual",
+      "polarity": "support",
+      "topic_tag": "deepseek_r1_swe_score",
+      "answers_key_question": "kq1",
+      "evidence": [
+        {
+          "source_id": "swe_bench_official",
+          "snippet": "DeepSeek-R1 scored ~49.2% on SWE-bench Verified, demonstrating state-of-the-art open-weights reasoning capability.",
+          "quote_type": "numeric"
+        }
+      ]
+    },
+    {
+      "id": "d1.c3",
+      "text": "Qwen2.5-Coder-32B-Instruct achieves 35.2% to 40.0% on SWE-bench Verified, outperforming older closed models (like GPT-4o-mini) and establishing a strong baseline for dense open weights.",
+      "kind": "factual",
+      "polarity": "support",
+      "topic_tag": "qwen_coder_swe_score",
+      "answers_key_question": "kq1",
+      "evidence": [
+        {
+          "source_id": "qwen_coder_report",
+          "snippet": "Qwen2.5-Coder-32B-Instruct scored ~35.2% on SWE-bench Verified base scaffold and higher with multi-turn agents like Aider and SWE-agent.",
+          "quote_type": "numeric"
+        }
+      ]
+    },
+    {
+      "id": "d1.c4",
+      "text": "On LiveCodeBench Pass@1, Claude 3.5 Sonnet scores between 41.4% and 51.1%, leading open-weight dense models on unseen competitive programming problems.",
+      "kind": "factual",
+      "polarity": "refute",
+      "topic_tag": "livecodebench_claude_score",
+      "answers_key_question": "kq1",
+      "evidence": [
+        {
+          "source_id": "livecodebench_leaderboard",
+          "snippet": "Claude 3.5 Sonnet (2024-10-22) achieves ~41.4% - 51.1% on LiveCodeBench Pass@1 depending on time slice and split.",
+          "quote_type": "numeric"
+        }
+      ]
+    },
+    {
+      "id": "d1.c5",
+      "text": "DeepSeek-V3 and Qwen2.5-Coder-32B-Instruct achieve 37.6% to 40.5% Pass@1 on LiveCodeBench, showing parity with GPT-4o but remaining slightly behind Claude 3.5 Sonnet.",
+      "kind": "factual",
+      "polarity": "neutral",
+      "topic_tag": "livecodebench_open_weight_scores",
+      "answers_key_question": "kq1",
+      "evidence": [
+        {
+          "source_id": "livecodebench_leaderboard",
+          "snippet": "DeepSeek-V3 achieves ~38.6% - 40.5% and Qwen2.5-Coder-32B-Instruct achieves ~37.6% - 40.0% on LiveCodeBench Pass@1.",
+          "quote_type": "numeric"
+        }
+      ]
+    },
+    {
+      "id": "d1.c6",
+      "text": "On the Aider polyglot code editing benchmark, Claude 3.5 Sonnet ranks as the top commercial model for complex multi-file diff generation and instruction adherence.",
+      "kind": "factual",
+      "polarity": "neutral",
+      "topic_tag": "aider_claude_ranking",
+      "answers_key_question": "kq2",
+      "evidence": [
+        {
+          "source_id": "aider_leaderboard",
+          "snippet": "Claude 3.5 Sonnet frequently tops the Aider leaderboard and is considered the gold standard for agentic coding in real-world repo scenarios.",
+          "quote_type": "direct"
+        }
+      ]
+    },
+    {
+      "id": "d1.c7",
+      "text": "Qwen2.5-Coder-32B-Instruct is recognized on the Aider benchmark as the highest-ranking sub-40B open-weights model, capable of matching proprietary models like GPT-4o-mini in edit format compliance.",
+      "kind": "factual",
+      "polarity": "support",
+      "topic_tag": "aider_qwen_ranking",
+      "answers_key_question": "kq2",
+      "evidence": [
+        {
+          "source_id": "aider_leaderboard",
+          "snippet": "Qwen 2.5 Coder 32B consistently scores high on the Aider benchmark, matching or outperforming closed models like GPT-4o-mini.",
+          "quote_type": "direct"
+        }
+      ]
+    },
+    {
+      "id": "d1.c8",
+      "text": "The performance trajectory heading into 2026 suggests open-weight models compress the performance lag behind proprietary models to 3 to 6 months on benchmark tasks, but proprietary agents maintain an advantage in integrated tool calling and long-horizon autonomy.",
+      "kind": "projective",
+      "polarity": "neutral",
+      "topic_tag": "benchmark_trajectory_2026",
+      "answers_key_question": "kq3",
+      "evidence": [
+        {
+          "source_id": "swe_bench_official",
+          "snippet": "Open-weight models on SWE-bench improved from <10% in early 2024 (DeepSeek-Coder-1.3B/33B) to nearly 50% by early 2025 (DeepSeek-R1).",
+          "quote_type": "paraphrase"
+        },
+        {
+          "source_id": "qwen_coder_report",
+          "snippet": "Rapid iteration cycles in open weights have narrowed the gap on static coding benchmarks significantly within a 12-month window.",
+          "quote_type": "paraphrase"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "swe_bench_official",
+      "url": "https://www.swebench.com/",
+      "title": "SWE-bench Official Benchmark & Leaderboard",
+      "quality": "primary",
+      "published_at": "2024-11"
+    },
+    {
+      "id": "livecodebench_leaderboard",
+      "url": "https://livecodebench.github.io/leaderboard.html",
+      "title": "LiveCodeBench: A Holistic and Contamination-Free Evaluation Benchmark for LLMs for Code",
+      "quality": "primary",
+      "published_at": "2024-12"
+    },
+    {
+      "id": "aider_leaderboard",
+      "url": "https://aider.chat/docs/leaderboards/",
+      "title": "Aider LLM Coding Leaderboard & Polyglot Benchmark",
+      "quality": "primary",
+      "published_at": "2025-01"
+    },
+    {
+      "id": "qwen_coder_report",
+      "url": "https://qwenlm.github.io/blog/qwen2.5-coder/",
+      "title": "Qwen2.5-Coder: Code More, Learn Better Technical Release",
+      "quality": "primary",
+      "published_at": "2024-11"
+    }
+  ],
+  "writing_context": [
+    {
+      "id": "d1.w1",
+      "kind": "methodology",
+      "text": "SWE-bench Verified filters out unsolvable or ambiguous tasks from SWE-bench Full to reduce scoring noise. LiveCodeBench collects problems continuously to prevent train-set contamination.",
+      "source_ids": ["swe_bench_official", "livecodebench_leaderboard"],
+      "applies_to": ["kq1"],
+      "use": "Note benchmark methodologies when comparing raw resolution percentages."
+    }
+  ]
+}

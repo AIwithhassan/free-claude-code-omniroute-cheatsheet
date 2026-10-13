@@ -1,0 +1,168 @@
+{
+  "mode": "initial",
+  "dimension_id": "d2",
+  "headline": "Open-source developer tooling (Aider, Cline, OpenHands, Continue) and local inference engines (Ollama, vLLM) have created a viable agentic scaffolding for open-weight models, but running frontier-scale coding models locally incurs significant hardware and VRAM barriers compared to cloud SaaS.",
+  "key_findings": [
+    {
+      "finding": "Qwen2.5-Coder and DeepSeek series dominate Hugging Face open coding model downloads, with broad community quantization support (GGUF, AWQ, EXL2) enabling widespread deployment across local runtimes.",
+      "claim_ids": ["d2.c1", "d2.c2"]
+    },
+    {
+      "finding": "Leading open-source agent frameworks (Aider, Cline, OpenHands, Continue.dev) now natively support open-weight models via Ollama, vLLM, SGLang, and OpenAI-compatible local endpoints.",
+      "claim_ids": ["d2.c3", "d2.c4"]
+    },
+    {
+      "finding": "While sub-14B models run easily on consumer GPUs (8–16GB VRAM), running top-tier coding models (32B+ dense or 671B MoE) requires 24GB–80GB+ VRAM or unified memory, creating a total cost of ownership (TCO) tradeoff against $20/month commercial subscriptions.",
+      "claim_ids": ["d2.c5", "d2.c6"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "d2.c1",
+      "text": "The Qwen2.5-Coder family (spanning 0.5B to 32B parameters) and DeepSeek models lead the Hugging Face open-source code model download charts with millions of monthly downloads across official and community quantizations.",
+      "kind": "factual",
+      "polarity": "support",
+      "topic_tag": "huggingface_download_dominance",
+      "answers_key_question": "kq1",
+      "evidence": [
+        {
+          "source_id": "hf_qwen_hub",
+          "snippet": "Qwen2.5-Coder models consistently top Hugging Face open code model charts with millions of monthly downloads across official and quantized builds.",
+          "quote_type": "paraphrase"
+        }
+      ]
+    },
+    {
+      "id": "d2.c2",
+      "text": "Community quantizations (GGUF by bartowski, AWQ, and EXL2) are published within hours of open-weight coding model releases, enabling rapid adoption across Ollama, LM Studio, and llama.cpp.",
+      "kind": "factual",
+      "polarity": "neutral",
+      "topic_tag": "quantization_ecosystem_speed",
+      "answers_key_question": "kq1",
+      "evidence": [
+        {
+          "source_id": "hf_qwen_hub",
+          "snippet": "Community quantizations (GGUF, AWQ, EXL2) from maintainers like bartowski and unsloth enable broad local deployment.",
+          "quote_type": "paraphrase"
+        }
+      ]
+    },
+    {
+      "id": "d2.c3",
+      "text": "Open-source agent harnesses including Aider, Cline (VS Code extension), OpenHands (formerly OpenDevin), and Continue.dev offer full integration with local LLM runtimes via OpenAI-compatible endpoints.",
+      "kind": "factual",
+      "polarity": "support",
+      "topic_tag": "open_agent_harness_integration",
+      "answers_key_question": "kq2",
+      "evidence": [
+        {
+          "source_id": "github_openhands",
+          "snippet": "OpenHands supports open-weight models like Qwen2.5-Coder for autonomous software engineering tasks via vLLM and LiteLLM.",
+          "quote_type": "paraphrase"
+        },
+        {
+          "source_id": "github_cline",
+          "snippet": "Cline enables developers to connect local or self-hosted models for tool calling, terminal execution, and diff editing.",
+          "quote_type": "paraphrase"
+        }
+      ]
+    },
+    {
+      "id": "d2.c4",
+      "text": "High-throughput inference frameworks like vLLM, SGLang, and Ollama provide optimized KV-cache management, PagedAttention, and structured output generation necessary for multi-turn agentic coding.",
+      "kind": "factual",
+      "polarity": "support",
+      "topic_tag": "local_inference_runtimes",
+      "answers_key_question": "kq2",
+      "evidence": [
+        {
+          "source_id": "vllm_docs",
+          "snippet": "vLLM and SGLang offer high-throughput serving with PagedAttention and native tool/function calling support for coding agents.",
+          "quote_type": "paraphrase"
+        }
+      ]
+    },
+    {
+      "id": "d2.c5",
+      "text": "Running Qwen2.5-Coder-32B at 4-bit quantization (Q4_K_M) requires approximately 20GB to 24GB of VRAM, necessitating at least an RTX 3090/4090 or Apple Silicon Mac with 32GB+ Unified Memory.",
+      "kind": "factual",
+      "polarity": "neutral",
+      "topic_tag": "hardware_vram_requirements",
+      "answers_key_question": "kq3",
+      "evidence": [
+        {
+          "source_id": "qwen_coder_specs",
+          "snippet": "Qwen2.5-Coder-32B requires ~20GB VRAM in Q4 GGUF/AWQ and ~70GB VRAM in FP16 unquantized.",
+          "quote_type": "numeric"
+        }
+      ]
+    },
+    {
+      "id": "d2.c6",
+      "text": "The Total Cost of Ownership (TCO) for running 30B–70B+ local models on dedicated workstation hardware ($1,500–$3,000+ upfront GPU cost plus electricity) creates a significant upfront investment tradeoff against $20/month flat-rate cloud subscriptions.",
+      "kind": "interpretive",
+      "polarity": "refute",
+      "topic_tag": "tco_vs_cloud_saas",
+      "answers_key_question": "kq3",
+      "evidence": [
+        {
+          "source_id": "qwen_coder_specs",
+          "snippet": "Hardware requirements for top-tier local models necessitate specialized 24GB+ GPU hardware investments compared to cloud API access.",
+          "quote_type": "paraphrase"
+        },
+        {
+          "source_id": "vllm_docs",
+          "snippet": "High-concurrency or high-parameter local deployment mandates high memory bandwidth GPUs (A100, H100, RTX 4090) for responsive token generation speeds.",
+          "quote_type": "paraphrase"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "hf_qwen_hub",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct",
+      "title": "Hugging Face Model Hub: Qwen2.5-Coder-32B-Instruct",
+      "quality": "primary",
+      "published_at": "2024-11"
+    },
+    {
+      "id": "github_openhands",
+      "url": "https://github.com/All-Hands-AI/OpenHands",
+      "title": "OpenHands: An Open Platform for AI Software Developers",
+      "quality": "primary",
+      "published_at": "2025-01"
+    },
+    {
+      "id": "github_cline",
+      "url": "https://github.com/cline/cline",
+      "title": "Cline: Autonomous Coding Agent in the Terminal & IDE",
+      "quality": "primary",
+      "published_at": "2025-01"
+    },
+    {
+      "id": "vllm_docs",
+      "url": "https://docs.vllm.ai/",
+      "title": "vLLM: High-Throughput and Memory-Efficient Inference Engine for LLMs",
+      "quality": "primary",
+      "published_at": "2024-12"
+    },
+    {
+      "id": "qwen_coder_specs",
+      "url": "https://github.com/QwenLM/Qwen2.5-Coder",
+      "title": "Qwen2.5-Coder Official Repository & Hardware Specifications",
+      "quality": "primary",
+      "published_at": "2024-11"
+    }
+  ],
+  "writing_context": [
+    {
+      "id": "d2.w1",
+      "kind": "scope_boundary",
+      "text": "Quantization formats evaluate Q4_K_M, AWQ, and EXL2 as standard representative 4-bit implementations.",
+      "source_ids": ["hf_qwen_hub", "qwen_coder_specs"],
+      "applies_to": ["kq1", "kq3"],
+      "use": "Frame local hardware feasibility around standard 4-bit to 8-bit quantized weights."
+    }
+  ]
+}

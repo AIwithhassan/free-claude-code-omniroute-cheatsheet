@@ -1,0 +1,143 @@
+{
+  "mode": "normal",
+  "strategy": {
+    "relevant_dimensions": [
+      "by_topic",
+      "by_evidence_type"
+    ],
+    "primary_dimension": "by_topic",
+    "rationale": "Separates the investigation into three distinct, non-overlapping empirical domains: rigorous benchmark metrics, open-source ecosystem/scaffolding activity, and real-world developer discussions to assess the 2026 feasibility of open-weight coding models replacing paid agents."
+  },
+  "dimensions": [
+    {
+      "id": "d1",
+      "name": "Research Benchmarks & Coding Capability Evaluation",
+      "description": "Evaluate and compare state-of-the-art open-weight models against leading proprietary coding agents on standard software engineering benchmarks.",
+      "key_questions": [
+        "How do leading open-weight models (DeepSeek-Coder-V2/V3, Qwen 2.5 Coder, Llama 3.1/3.3, Codestral) compare against frontier commercial models (Claude 3.5/3.7 Sonnet, GPT-4o, OpenAI o1/o3-mini) on SWE-bench Verified, SWE-bench Lite, LiveCodeBench, and Aider LLM leaderboard?",
+        "What are the key architectural and capability gaps between open-weight models and proprietary models in agentic code generation, multi-file editing, tool use, and long-context repository reasoning?",
+        "What trajectory do research benchmark curves demonstrate heading into 2026 for open-weight coding models?"
+      ],
+      "focus": "SWE-bench Verified/Lite scores, LiveCodeBench, HumanEval/MBPP, Aider benchmarks, agentic tool execution accuracy, and benchmark trendlines.",
+      "sources": [
+        {
+          "category": "academic",
+          "description": "SWE-bench, LiveCodeBench, and model technical report preprints and benchmark papers"
+        },
+        {
+          "category": "official",
+          "description": "Benchmark leaderboards, Anthropic/OpenAI/DeepSeek/Qwen official benchmark releases and technical reports"
+        },
+        {
+          "category": "data",
+          "description": "Aider LLM benchmark leaderboard, LMSYS Chatbot Arena Coding Leaderboard, and independent evaluation suites"
+        }
+      ],
+      "lenses": [],
+      "depth": "thorough",
+      "time_sensitivity": "High time sensitivity; focus on late 2024 through 2026 state-of-the-art benchmarks and model releases",
+      "scope_ownership": {
+        "owns": [
+          "Quantitative coding benchmark scores (SWE-bench, LiveCodeBench, Aider, HumanEval)",
+          "Comparative accuracy, pass rates, and error analyses between proprietary and open-weight models on standardized tasks",
+          "Model capability trajectories and benchmark-level gap analyses"
+        ],
+        "excludes": [
+          "Ecosystem repository metrics and download statistics",
+          "Subjective developer testimonials and forum sentiments"
+        ],
+        "shared_topics": [
+          "Model family definitions (DeepSeek, Qwen, Llama, Claude, GPT)"
+        ],
+        "overlap_policy": "d1 owns all standardized benchmark scores and formal capability measurements; d2 and d3 reference these model names but do not recalculate benchmark scores."
+      }
+    },
+    {
+      "id": "d2",
+      "name": "Hugging Face, Open-Source Scaffolding & GitHub Ecosystem Activity",
+      "description": "Analyze Hugging Face download velocity, model quantization availability, and GitHub developer tooling ecosystems that turn raw open-weight models into autonomous coding agents.",
+      "key_questions": [
+        "What do Hugging Face download volumes, community finetunes, and model releases indicate about open-weight coding adoption (DeepSeek, Qwen-2.5-Coder, Starcoder, Mistral)?",
+        "How mature are open-source agentic harnesses (Aider, OpenHands/OpenDevin, Cline/Roo-Code, Continue.dev) when powered by open-weight models via Ollama, vLLM, SGLang, or LiteLLM?",
+        "What are the hardware, inference speed, VRAM, and total cost of ownership (TCO) realities of running capable local coding agents vs paying subscription fees (e.g., $20/mo for Claude Pro/Cursor vs hardware investments)?"
+      ],
+      "focus": "Hugging Face model statistics, GitHub stars/commits/releases for agent harnesses, local inference engines, and VRAM/hardware feasibility.",
+      "sources": [
+        {
+          "category": "github",
+          "description": "GitHub repositories for Aider, OpenHands, Cline, Continue, Ollama, vLLM, and SGLang"
+        },
+        {
+          "category": "developer",
+          "description": "Hugging Face model hub cards, model download metrics, and quantization ecosystem releases"
+        },
+        {
+          "category": "official",
+          "description": "Documentation and hardware specifications from open-source inference frameworks and hardware guides"
+        }
+      ],
+      "lenses": [],
+      "depth": "thorough",
+      "time_sensitivity": "Focus on 2024-2026 ecosystem developments, tooling updates, and modern quantization methods",
+      "scope_ownership": {
+        "owns": [
+          "Hugging Face download trends, model availability, and quantization (GGUF, AWQ, EXL2)",
+          "GitHub ecosystem activity for open-source agent frameworks (Aider, OpenHands, Cline, Continue)",
+          "Hardware requirements (VRAM, GPU compute), local inference economics, and infrastructure TCO"
+        ],
+        "excludes": [
+          "Formal academic benchmark leaderboards",
+          "Unstructured forum discussions on HN and Stack Overflow"
+        ],
+        "shared_topics": [
+          "Agent tool calling and workflow definitions"
+        ],
+        "overlap_policy": "d2 owns the tooling, infrastructure, downloads, and execution frameworks; d1 handles benchmark scores and d3 handles developer qualitative sentiment."
+      }
+    },
+    {
+      "id": "d3",
+      "name": "Developer Sentiment & Real-World Pragmatics on Hacker News & Stack Overflow",
+      "description": "Gather practitioner experiences, qualitative feedback, community debates, and real-world enterprise adoption hurdles regarding open-weight models vs paid coding assistants.",
+      "key_questions": [
+        "What is the prevailing developer consensus on Hacker News and Stack Overflow regarding the daily usability of local/open-weight models vs Claude 3.5/3.7 Sonnet or Cursor?",
+        "What real-world pain points (hallucination in complex codebases, context window degradation, multi-file coherence, latency, setup friction) do developers report when trying to replace paid tools?",
+        "What enterprise considerations (data privacy, IP compliance, offline security vs developer productivity) drive teams toward or away from open-weight coding agents in 2026?"
+      ],
+      "focus": "Qualitative developer threads, practical failure modes, workflow friction, privacy/IP motivations, and consensus regarding realistic replacement in 2026.",
+      "sources": [
+        {
+          "category": "forum",
+          "description": "Hacker News discussions, Ask HN threads, and community post-mortems"
+        },
+        {
+          "category": "community",
+          "description": "Stack Overflow discussions, developer surveys, Reddit r/LocalLLaMA and r/programming practitioner threads"
+        },
+        {
+          "category": "developer",
+          "description": "Engineering blog posts, team case studies, and practitioner experience reports"
+        }
+      ],
+      "lenses": [],
+      "depth": "thorough",
+      "time_sensitivity": "Active community sentiment and practitioner retrospectives from 2024 through 2026",
+      "scope_ownership": {
+        "owns": [
+          "Hacker News, Stack Overflow, and developer forum discussions and sentiment analysis",
+          "Real-world workflow friction, multi-file editing failure modes, and user experience tradeoffs",
+          "Enterprise privacy, IP governance, and compliance drivers vs SaaS productivity"
+        ],
+        "excludes": [
+          "Formal benchmark measurement datasets",
+          "GitHub repository code analysis and raw download metrics"
+        ],
+        "shared_topics": [
+          "Commercial tool definitions (Cursor, GitHub Copilot, Devin, Claude Code)"
+        ],
+        "overlap_policy": "d3 owns qualitative developer feedback, real-world case studies, and enterprise sentiment; references facts from d1 and d2 without duplicating their primary data collection."
+      }
+    }
+  ],
+  "notes": "Plan designed to rigorously investigate the technological, operational, and economic feasibility of open-weight coding agents replacing commercial equivalents in 2026."
+}

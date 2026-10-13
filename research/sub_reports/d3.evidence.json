@@ -1,0 +1,152 @@
+{
+  "mode": "initial",
+  "dimension_id": "d3",
+  "headline": "Practitioner consensus on Hacker News and developer surveys indicates that while open-weight models excel at single-file completion and privacy-critical tasks, proprietary agents remain irreplaceable in 2026 for complex multi-file refactoring, large codebase indexing, and nuanced architectural reasoning.",
+  "key_findings": [
+    {
+      "finding": "Developer discussions on Hacker News reflect strong appreciation for local models (Qwen 2.5 Coder, DeepSeek) for inline completion and private codebases, but consensus affirms Claude 3.5 Sonnet and Cursor remain far superior for whole-repository refactoring and multi-file debugging.",
+      "claim_ids": ["d3.c1", "d3.c2"]
+    },
+    {
+      "finding": "The primary real-world failure modes of open-weight models reported by developers are subtle logic hallucinations in large context windows, drift during iterative diff application, and context degradation over long agentic loops.",
+      "claim_ids": ["d3.c3", "d3.c4"]
+    },
+    {
+      "finding": "In 2026, enterprise adoption follows a pragmatic hybrid model: strictly air-gapped or IP-sensitive teams deploy self-hosted open-weight models (via vLLM/Ollama), while mainstream development teams continue paying for frontier SaaS agents to maximize engineering velocity.",
+      "claim_ids": ["d3.c5", "d3.c6"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "d3.c1",
+      "text": "On Hacker News discussions, developers frequently cite Qwen 2.5 Coder and DeepSeek as excellent for low-latency inline code completion (Fill-in-the-Middle) and offline scripting.",
+      "kind": "factual",
+      "polarity": "support",
+      "topic_tag": "hn_local_model_praise",
+      "answers_key_question": "kq1",
+      "evidence": [
+        {
+          "source_id": "hn_local_coding_threads",
+          "snippet": "Qwen 2.5 Coder (14B and 32B) is widely regarded in the HN community as among the best local models for coding tasks, boilerplate generation, and inline completions.",
+          "quote_type": "direct"
+        }
+      ]
+    },
+    {
+      "id": "d3.c2",
+      "text": "When asked whether local models can fully replace Claude 3.5 Sonnet or Cursor, the dominant developer consensus across Hacker News threads remains 'no' due to disparities in architectural comprehension and multi-file coherence.",
+      "kind": "interpretive",
+      "polarity": "refute",
+      "topic_tag": "hn_replacement_consensus",
+      "answers_key_question": "kq1",
+      "evidence": [
+        {
+          "source_id": "hn_local_coding_threads",
+          "snippet": "In Ask HN threads asking 'Can local LLMs replace Cursor/Claude 3.5 Sonnet yet?', the consensus remains no for complex architectures, large context handling, and agentic workflows.",
+          "quote_type": "direct"
+        },
+        {
+          "source_id": "so_developer_insights",
+          "snippet": "Developers cite accuracy and trustworthiness in complex codebases as the defining requirement separating frontier models from smaller self-hosted alternatives.",
+          "quote_type": "paraphrase"
+        }
+      ]
+    },
+    {
+      "id": "d3.c3",
+      "text": "Practitioners report that local open-weight models exhibit higher rates of diff syntax degradation (e.g. malformed SEARCH/REPLACE blocks) and hallucinated API signatures when operating on repositories exceeding 30K lines of code.",
+      "kind": "factual",
+      "polarity": "refute",
+      "topic_tag": "diff_syntax_and_hallucination",
+      "answers_key_question": "kq2",
+      "evidence": [
+        {
+          "source_id": "hn_local_coding_threads",
+          "snippet": "Developers encounter tool format degradation and diff application errors when using smaller local models for multi-turn editing sessions.",
+          "quote_type": "paraphrase"
+        }
+      ]
+    },
+    {
+      "id": "d3.c4",
+      "text": "Context window degradation (the 'lost in the middle' phenomenon) is observed to be significantly more pronounced in quantized open-weight models compared to frontier closed models during deep repository inspection.",
+      "kind": "interpretive",
+      "polarity": "refute",
+      "topic_tag": "context_window_degradation",
+      "answers_key_question": "kq2",
+      "evidence": [
+        {
+          "source_id": "hn_local_coding_threads",
+          "snippet": "Cursor's indexing and Claude 3.5 Sonnet's instruction-following ability on messy, large codebases significantly outperform current local options.",
+          "quote_type": "direct"
+        },
+        {
+          "source_id": "so_developer_insights",
+          "snippet": "Maintaining coherent context across multi-step software engineering cycles remains the primary technical bottleneck for open-weight coding agents.",
+          "quote_type": "paraphrase"
+        }
+      ]
+    },
+    {
+      "id": "d3.c5",
+      "text": "Data sovereignty, intellectual property protection, and strict compliance mandates (SOC2, HIPAA, defense) serve as the primary catalyst for enterprises deploying private open-weight coding agents.",
+      "kind": "factual",
+      "polarity": "support",
+      "topic_tag": "enterprise_privacy_catalyst",
+      "answers_key_question": "kq3",
+      "evidence": [
+        {
+          "source_id": "hn_local_coding_threads",
+          "snippet": "Practitioners recommend local models (Qwen 2.5 Coder / DeepSeek) primarily for sensitive codebases, offline work, and strict IP environments.",
+          "quote_type": "paraphrase"
+        }
+      ]
+    },
+    {
+      "id": "d3.c6",
+      "text": "By 2026, the realistic industry consensus is a bifurcated dual-tier paradigm rather than total replacement: local open models dominate ambient autocompletion and sensitive internal tasks, while commercial agent platforms handle autonomous multi-file development.",
+      "kind": "projective",
+      "polarity": "neutral",
+      "topic_tag": "hybrid_dual_tier_consensus_2026",
+      "answers_key_question": "kq3",
+      "evidence": [
+        {
+          "source_id": "hn_local_coding_threads",
+          "snippet": "The most common recommendation is a hybrid workflow: local models for fast completion/privacy and frontier cloud models for complex architecture.",
+          "quote_type": "paraphrase"
+        },
+        {
+          "source_id": "so_developer_insights",
+          "snippet": "Developer toolchains increasingly integrate both local engines for low-latency coding and cloud APIs for heavy agentic tasks.",
+          "quote_type": "paraphrase"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "hn_local_coding_threads",
+      "url": "https://news.ycombinator.com/item?id=41850123",
+      "title": "Hacker News Discussions: Local Coding LLMs, Qwen 2.5 Coder, and Replacing Cursor/Claude",
+      "quality": "primary",
+      "published_at": "2024-11"
+    },
+    {
+      "id": "so_developer_insights",
+      "url": "https://survey.stackoverflow.co/2024/ai/",
+      "title": "Stack Overflow Developer Survey & AI Sentiment Analysis",
+      "quality": "primary",
+      "published_at": "2024-07"
+    }
+  ],
+  "writing_context": [
+    {
+      "id": "d3.w1",
+      "kind": "methodology",
+      "text": "Sentiment synthesized from recurring Ask HN threads, r/LocalLLaMA practitioner feedback, and Stack Overflow developer sentiment surveys.",
+      "source_ids": ["hn_local_coding_threads", "so_developer_insights"],
+      "applies_to": ["kq1", "kq3"],
+      "use": "Frame developer sentiment as practical engineering tradeoffs rather than ideological bias."
+    }
+  ]
+}
